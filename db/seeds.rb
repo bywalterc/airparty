@@ -1,4 +1,5 @@
 puts 'Cleaning databases...'
+Booking.destroy_all
 Space.destroy_all
 User.destroy_all
 
