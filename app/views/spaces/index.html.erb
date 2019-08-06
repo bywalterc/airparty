@@ -1,8 +1,24 @@
-<% @spaces.each do |space| %>
-  <%= space.name %>
-  <%= space.address %>
-  <%= space.price %>
-  <%= space.capacity %>
-  <%= space.description %>
-<% end %>
+<div class="container">
+  <h1> Our Spaces (<%= @spaces.count %>)</h1>
+
+  <%= link_to "+ New Space", new_space_path, {class: "nav-link"}%>
+
+  <% @spaces.each do |space| %>
+    <div>
+      <%= link_to space_path(space), {class: "xxx"} do %>
+        <p><%= space.name %></p>
+      <% end %>
+
+      <%= cl_image_tag(space.photo,
+      width: 400, height: 300, crop: :fill) %>
+
+      <p>Address: <%= space.address %></p>
+      <p>Price: <%= space.price %></p>
+      <p>Capacity: <%= space.capacity %></p>
+    </div>
+  <% end %>
+
+
+</div>
+
 

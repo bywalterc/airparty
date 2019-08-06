@@ -1,5 +1,29 @@
-<%= @space.name %>
-<%= @space.description %>
-<%= @space.category %>
-<%= @space.price %>
+<div class="container">
+  <h2>
+    <%= @space.name %>
+  </h2>
+  <%= cl_image_tag(@space.photo,
+      width: 400, height: 300, crop: :fill) %>
+
+    <p>Address: <%= @space.address %></p>
+    <p>Description: <%= @space.description %></p>
+    <p>Category: <%= @space.category %></p>
+    <p>Price: <%= @space.price %></p>
+    <p>Capacity: <%= @space.capacity %></p>
+  <p class="trash_link">
+      <%= link_to space_path(@space), method: :delete do %>
+          <i class="far fa-trash-alt"></i>
+      <% end %>
+  </p>
+  <p class="trash_link">
+      <%= link_to edit_space_path(@space) do %>
+          <i class="far fa-edit"></i>
+      <% end %>
+  </p>
+
+  <div class="back-link-section">
+    <%= link_to "< Back", spaces_path, {class: "back-link"} %>
+  </div>
+
+</div>
 
