@@ -40,6 +40,7 @@ spaces_attributes = [
   category: "party space",
   capacity: 75,
   user: ana
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 {
   name: "Ana's Apartment Terrace",
@@ -48,6 +49,7 @@ spaces_attributes = [
   category: "party space",
   capacity: 30,
   user: ana
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 
 {
@@ -57,6 +59,7 @@ spaces_attributes = [
   category: 'party space',
   capacity: 65,
   user: simona
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 
 
@@ -67,6 +70,7 @@ spaces_attributes = [
   category: 'party space',
   capacity: 15,
   user: simona
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 {
 name: "Walter's Vinyard",
@@ -75,7 +79,7 @@ name: "Walter's Vinyard",
   category: 'wedding space',
   capacity: 200,
   user: walter
-
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 
 {
@@ -85,7 +89,7 @@ name: "Walter's Summer House",
   category: 'bbq area',
   capacity: 50,
   user: walter
-
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 
 {
@@ -95,7 +99,7 @@ name: "Walter's Summer House",
   category: 'recreation area',
   capacity: 8,
   user: spencer
-
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 
 {
@@ -105,7 +109,7 @@ name: "Walter's Summer House",
   category: 'dinner party venue',
   capacity: 20,
   user: spencer
-
+  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
 },
 
 ]
