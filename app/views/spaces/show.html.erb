@@ -10,5 +10,15 @@
           <i class="far fa-trash-alt"></i>
       <% end %>
   </p>
+  <p class="trash_link">
+      <%= link_to edit_space_path(@space) do %>
+          <i class="far fa-edit"></i>
+      <% end %>
+  </p>
+
+  <div class="back-link-section">
+    <%= link_to "< Back", spaces_path, {class: "back-link"} %>
+  </div>
+
 </div>
 
