@@ -1,6 +1,8 @@
 <div class="container">
   <h1> Our Spaces (<%= @spaces.count %>)</h1>
 
+  <%= link_to "+ New Space", new_space_path, {class: "nav-link"}%>
+
   <% @spaces.each do |space| %>
     <div>
       <%= link_to space_path(space), {class: "xxx"} do %>
@@ -15,6 +17,8 @@
       <p>Capacity: <%= space.capacity %></p>
     </div>
   <% end %>
+
+
 
 </div>
 
