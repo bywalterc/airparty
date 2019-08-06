@@ -2,9 +2,11 @@
   <h2>
     <%= @space.name %>
   </h2>
-  <%= @space.description %>
-  <%= @space.category %>
-  <%= @space.price %>
+    <p>Address: <%= @space.address %></p>
+    <p>Description: <%= @space.description %></p>
+    <p>Category: <%= @space.category %></p>
+    <p>Price: <%= @space.price %></p>
+    <p>Capacity: <%= @space.capacity %></p>
   <p class="trash_link">
       <%= link_to space_path(@space), method: :delete do %>
           <i class="far fa-trash-alt"></i>

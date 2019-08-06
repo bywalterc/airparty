@@ -6,10 +6,9 @@
       <%= link_to space_path(space), {class: "xxx"} do %>
         <p><%= space.name %></p>
       <% end %>
-      <%= space.address %>
-      <%= space.price %>
-      <%= space.capacity %>
-      <%= space.description %>
+      <p>Address: <%= space.address %></p>
+      <p>Price: <%= space.price %></p>
+      <p>Capacity: <%= space.capacity %></p>
     </div>
   <% end %>
 
