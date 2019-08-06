@@ -1,5 +1,14 @@
-<%= @space.name %>
-<%= @space.description %>
-<%= @space.category %>
-<%= @space.price %>
+<div class="container">
+  <h2>
+    <%= @space.name %>
+  </h2>
+  <%= @space.description %>
+  <%= @space.category %>
+  <%= @space.price %>
+  <p class="trash_link">
+      <%= link_to space_path(@space), method: :delete do %>
+          <i class="far fa-trash-alt"></i>
+      <% end %>
+  </p>
+</div>
 

@@ -1,8 +1,18 @@
-<% @spaces.each do |space| %>
-  <%= space.name %>
-  <%= space.address %>
-  <%= space.price %>
-  <%= space.capacity %>
-  <%= space.description %>
-<% end %>
+<div class="container">
+  <h1> Our Spaces (<%= @spaces.count %>)</h1>
+
+  <% @spaces.each do |space| %>
+    <div>
+      <%= link_to space_path(space), {class: "xxx"} do %>
+        <p><%= space.name %></p>
+      <% end %>
+      <%= space.address %>
+      <%= space.price %>
+      <%= space.capacity %>
+      <%= space.description %>
+    </div>
+  <% end %>
+
+</div>
+
 
