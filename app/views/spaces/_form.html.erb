@@ -6,7 +6,8 @@
   <%= f.input :description %>
   <%= f.input :category %>
   <%= f.input :capacity %>
-  <%= f.input :space_photo %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit %>
   <!-- [...] -->
 <% end %>
