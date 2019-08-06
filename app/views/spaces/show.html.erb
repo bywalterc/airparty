@@ -2,6 +2,9 @@
   <h2>
     <%= @space.name %>
   </h2>
+  <%= cl_image_tag(@space.photo,
+      width: 400, height: 300, crop: :fill) %>
+
     <p>Address: <%= @space.address %></p>
     <p>Description: <%= @space.description %></p>
     <p>Category: <%= @space.category %></p>

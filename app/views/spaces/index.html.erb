@@ -6,6 +6,10 @@
       <%= link_to space_path(space), {class: "xxx"} do %>
         <p><%= space.name %></p>
       <% end %>
+
+      <%= cl_image_tag(space.photo,
+      width: 400, height: 300, crop: :fill) %>
+
       <p>Address: <%= space.address %></p>
       <p>Price: <%= space.price %></p>
       <p>Capacity: <%= space.capacity %></p>

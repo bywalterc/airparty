@@ -39,8 +39,8 @@ spaces_attributes = [
   price: 100,
   category: "party space",
   capacity: 75,
-  user: ana
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: ana,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 {
   name: "Ana's Apartment Terrace",
@@ -48,8 +48,8 @@ spaces_attributes = [
   price: 50,
   category: "party space",
   capacity: 30,
-  user: ana
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: ana,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 
 {
@@ -58,8 +58,8 @@ spaces_attributes = [
   price: 50,
   category: 'party space',
   capacity: 65,
-  user: simona
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: simona,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 
 
@@ -69,8 +69,8 @@ spaces_attributes = [
   price: 75,
   category: 'party space',
   capacity: 15,
-  user: simona
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: simona,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 {
 name: "Walter's Vinyard",
@@ -78,8 +78,8 @@ name: "Walter's Vinyard",
   price: 1750,
   category: 'wedding space',
   capacity: 200,
-  user: walter
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: walter,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 
 {
@@ -88,8 +88,8 @@ name: "Walter's Summer House",
   price: 80,
   category: 'bbq area',
   capacity: 50,
-  user: walter
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: walter,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 
 {
@@ -98,8 +98,8 @@ name: "Walter's Summer House",
   price: 55,
   category: 'recreation area',
   capacity: 8,
-  user: spencer
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: spencer,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 
 {
@@ -108,8 +108,8 @@ name: "Walter's Summer House",
   price: 175,
   category: 'dinner party venue',
   capacity: 20,
-  user: spencer
-  remote_photo_url: "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+  user: spencer,
+  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
 },
 
 ]
