@@ -31,88 +31,93 @@ puts "Finished!"
 
 
 puts 'Creating Spaces...'
-spaces_attributes = [
 
-{
-  name: "Ana's palace",
+palace = Space.new(name: "Ana's Palace",
   address: "6 Palace Place",
   price: 100,
-  category: "party space",
+  category: "Party space",
   capacity: 75,
-  user: ana,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
-{
-  name: "Ana's Apartment Terrace",
+  user: ana)
+
+palace_url = "https://cdn.londonandpartners.com/asset/english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6.jpg"
+palace.remote_photo_url = palace_url
+palace.save
+
+terrace = Space.new(name: "Ana's Apartment Terrace",
   address: "8 Palace Place",
   price: 50,
-  category: "party space",
+  category: "Party space",
   capacity: 30,
-  user: ana,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
+  user: ana)
 
-{
-  name: "Simona's Roof Terrace",
+terrace_url = "https://secure.i.telegraph.co.uk/multimedia/archive/02569/filename_ext_2569326k.jpg"
+terrace.remote_photo_url = terrace_url
+terrace.save
+
+roof = Space.new(name: "Simona's Roof Terrace",
   address: '5 Roof Road ',
   price: 50,
-  category: 'party space',
+  category: 'Party space',
   capacity: 65,
-  user: simona,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
+  user: simona)
 
+roof_url = "https://assets.londonist.com/uploads/2019/05/i875/sushi_samba.jpg"
+roof.remote_photo_url = roof_url
+roof.save
 
-{
-  name: "Simona's sauna and pool",
+sauna = Space.new(name: "Simona's Sauna and Pool",
   address: '5 Sauna Street',
   price: 75,
-  category: 'party space',
+  category: 'Party space',
   capacity: 15,
-  user: simona,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
-{
-name: "Walter's Vinyard",
+  user: simona)
+
+sauna_url = "https://amp.businessinsider.com/images/56fbdafbdd0895d5598b4931-2732-1366.jpg"
+sauna.remote_photo_url = sauna_url
+sauna.save
+
+vinyard = Space.new(name: "Walter's Vinyard",
   address: '3 Drunk Way',
   price: 1750,
-  category: 'wedding space',
+  category: 'Wedding space',
   capacity: 200,
-  user: walter,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
+  user: walter)
 
-{
-name: "Walter's Summer House",
+vinyard_url = "http://www.kmproperties.biz/vineyard-property-for-sale/green-valley-property/green-valley-vineyard.jpg"
+vinyard.remote_photo_url = vinyard_url
+vinyard.save
+
+summer = Space.new(name: "Walter's Summer House",
   address: '4 Drunk Way',
   price: 80,
-  category: 'bbq area',
+  category: 'BBQ area',
   capacity: 50,
-  user: walter,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
+  user: walter)
 
-{
-  name: "Spencer's Tennis Court",
+summer_url = "https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/06/15/11/3.jpg"
+summer.remote_photo_url = summer_url
+summer.save
+
+tennis = Space.new(name: "Spencer's Tennis Court",
   address: '3 Nadal Way',
   price: 55,
-  category: 'recreation area',
+  category: 'Recreation area',
   capacity: 8,
-  user: spencer,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
+  user: spencer)
 
-{
-  name: "Spencer's Secret Bunker",
-  address: '3 Hitler Heights',
+tennis_url = "https://odis.homeaway.com/odis/listing/598aeeab-d6d9-4e29-99b1-61942162ae72.c10.jpg"
+tennis.remote_photo_url = tennis_url
+tennis.save
+
+bunker = Space.new(name: "Spencer's Secret Bunker",
+  address: '3 Normandy Heights',
   price: 175,
-  category: 'dinner party venue',
+  category: 'Dinner party venue',
   capacity: 20,
-  user: spencer,
-  photo: "english-heritage-eltham-palace-entrance-hall-33dbc7dd425e4dea909e3e09b068fcc6_jmss29"
-},
+  user: spencer)
 
-]
+bunker_url = "https://i.dailymail.co.uk/i/newpix/2018/03/12/14/4A1E269B00000578-5490783-Equipped_with_survival_gear_and_custom_made_interiors_pictured_t-a-17_1520864892729.jpg"
+bunker.remote_photo_url = bunker_url
+bunker.save
 
-Space.create!(spaces_attributes)
 puts "Finished!"
