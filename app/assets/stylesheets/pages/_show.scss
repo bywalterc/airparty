@@ -1,5 +1,5 @@
 .banner-img > img {
-  height: 400px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
@@ -12,20 +12,30 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   border-radius: 8px;
   margin-bottom: 24px;
-  padding: 8px;
+  padding: 24px;
 }
 
 .detail-box h3 {
   color: rgba(0,0,0,0.5)
 }
 
-.detail-area {
-  position: relative;
+.show-title {
+  height: 120px;
 }
 
-.detail-box .page-title {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+.show-description {
+  height: 200px;
 }
+
+.show-details {
+  height: 150px;
+}
+
+
+.detail-area {
+  position: relative;
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+

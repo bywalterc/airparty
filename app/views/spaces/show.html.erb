@@ -3,18 +3,18 @@
 </div>
 
 <div class="container detail-area">
-  <div class="detail-box page-title">
+  <div class="detail-box show-title">
     <h2><%= @space.name %></h1>
     <p><%= @space.address %></p>
   </div>
 
-  <div class="detail-box description">
+  <div class="detail-box show-description">
     <h3>A little bit more about this party space:</h3>
-    <p><%= @space.description %></p>
+    <p>Description: <%= @space.description %></p>
     <p>Category: <%= @space.category %></p>
   </div>
 
-  <div class="detail-box details">
+  <div class="detail-box show-details">
     <h3>Details:</h3>
     <div class="flat-summary-price-guest">
       <p><i class="fas fa-user-friends"></i>  <%= @space.capacity %></p>
