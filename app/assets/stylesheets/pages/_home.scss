@@ -2,3 +2,20 @@
 body {
   background: white;
 }
+
+.index-title {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.new-space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
