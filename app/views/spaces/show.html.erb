@@ -3,9 +3,26 @@
 </div>
 
 <div class="container detail-area">
+
   <div class="detail-box show-title">
+
     <h2><%= @space.name %></h1>
-    <p><%= @space.address %></p>
+
+    <div class="show-address-links">
+
+      <p><%= @space.address %></p>
+
+      <p class="show-links">
+        <%= link_to edit_space_path(@space) do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to space_path(@space), method: :delete do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+
+      </p>
+
+    </div>
   </div>
 
   <div class="detail-box show-description">
@@ -23,16 +40,6 @@
   </div>
 
   <div>
-    <p class="trash_link">
-        <%= link_to space_path(@space), method: :delete do %>
-            <i class="far fa-trash-alt"></i>
-        <% end %>
-    </p>
-    <p class="trash_link">
-        <%= link_to edit_space_path(@space) do %>
-            <i class="far fa-edit"></i>
-        <% end %>
-    </p>
   </div>
 
   <div class="back-link-section">
