@@ -3,6 +3,12 @@ body {
   background: white;
 }
 
+.container {
+  padding:20px;
+  margin: 66px auto;
+  width:100%;
+}
+
 .index-title {
   display: flex;
   justify-content: space-between;
@@ -19,3 +25,4 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+

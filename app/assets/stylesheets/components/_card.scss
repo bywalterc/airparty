@@ -40,5 +40,7 @@
 
 .space-summary-link {
   color: rgba(0,0,0,0.7);
-  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
