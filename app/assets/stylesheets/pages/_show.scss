@@ -1,0 +1,55 @@
+.banner-img > img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.detail-box {
+  overflow: hidden;
+  height: 100px;
+  width: 700px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.detail-box h3 {
+  color: rgba(0,0,0,0.5)
+}
+
+.show-title {
+  height: 120px;
+}
+
+.show-description {
+  height: 200px;
+}
+
+.show-details {
+  height: 150px;
+}
+
+
+.detail-area {
+  position: relative;
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.show-address-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-links a {
+  padding-left: 16px;
+  color: rgba(0,0,0,0.4);
+  &:hover {
+      text-decoration: none;
+      color: rgba(0,0,0,0.7);
+    }
+}
+

@@ -1,24 +1,36 @@
 <div class="container">
-  <h1> Our Spaces (<%= @spaces.count %>)</h1>
 
-  <%= link_to "+ New Space", new_space_path, {class: "nav-link"}%>
+<div class="index-banner">
+  <h1>Air Party</h1>
+  <h3>The right place for the right party</h3>
+</div>
+
+
+  <div class="index-title">
+    <h2> Our Spaces (<%= @spaces.count %>)</h2>
+    <div class="new-space">
+    </div>
+  </div>
 
   <% @spaces.each do |space| %>
-    <div>
-      <%= link_to space_path(space), {class: "xxx"} do %>
-        <p><%= space.name %></p>
-      <% end %>
 
-      <%= cl_image_tag(space.photo,
+    <div class="space-card-index">
+      <div class="space-image-index">
+        <%= cl_image_tag(space.photo,
       width: 400, height: 300, crop: :fill) %>
-
-      <p>Address: <%= space.address %></p>
-      <p>Price: <%= space.price %></p>
-      <p>Capacity: <%= space.capacity %></p>
+      </div>
+      <div class="space-summary-index">
+        <%= link_to space_path(space), {class: "space-summary-link"} do %>
+          <h3><%= space.name %></h3>
+        <% end %>
+        <p>Address: <%= space.address %></p>
+        <div class="space-summary-price-guest">
+          <p><i class="fas fa-user-friends"></i>  <%= space.capacity %></p>
+          <p><i class="fas fa-pound-sign"></i>  <%= space.price %> per night</p>
+        </div>
+      </div>
     </div>
   <% end %>
-
-
 </div>
 
 

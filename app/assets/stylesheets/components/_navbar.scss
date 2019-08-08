@@ -1,9 +1,4 @@
 
-.container {
-  padding:20px;
-  margin: 0 auto;
-  width:40%;
-}
 
 h1 {
  padding:20px;
@@ -22,4 +17,8 @@ h1 {
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-nav li {
+  margin-left: 16px;
 }

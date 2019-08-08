@@ -3,7 +3,7 @@ class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def index
-    @spaces = Space.all
+    @spaces = Space.all.reverse
   end
 
   def show

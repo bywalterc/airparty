@@ -1,29 +1,42 @@
-<div class="container">
-  <h2>
-    <%= @space.name %>
-  </h2>
-  <%= cl_image_tag(@space.photo,
-      width: 400, height: 300, crop: :fill) %>
+<div class="banner-img">
+  <%= cl_image_tag(@space.photo, crop: :fill) %>
+</div>
 
-    <p>Address: <%= @space.address %></p>
+<div class="container detail-area">
+
+  <div class="detail-box show-title">
+
+    <h2><%= @space.name %></h1>
+
+    <div class="show-address-links">
+
+      <p><%= @space.address %></p>
+
+      <p class="show-links">
+        <%= link_to edit_space_path(@space) do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to space_path(@space), method: :delete do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+
+      </p>
+
+    </div>
+  </div>
+
+  <div class="detail-box show-description">
+    <h3>A little bit more about this party space:</h3>
     <p>Description: <%= @space.description %></p>
     <p>Category: <%= @space.category %></p>
-    <p>Price: <%= @space.price %></p>
-    <p>Capacity: <%= @space.capacity %></p>
-  <p class="trash_link">
-      <%= link_to space_path(@space), method: :delete do %>
-          <i class="far fa-trash-alt"></i>
-      <% end %>
-  </p>
-  <p class="trash_link">
-      <%= link_to edit_space_path(@space) do %>
-          <i class="far fa-edit"></i>
-      <% end %>
-  </p>
+  </div>
 
-  <div class="back-link-section">
-    <%= link_to "< Back", spaces_path, {class: "back-link"} %>
+  <div class="detail-box show-details">
+    <h3>Details:</h3>
+    <div class="flat-summary-price-guest">
+      <p><i class="fas fa-user-friends"></i>  <%= @space.capacity %></p>
+      <p><i class="fas fa-pound-sign"></i>  <%= @space.price %> per night</p>
+    </div>
   </div>
 
 </div>
-
