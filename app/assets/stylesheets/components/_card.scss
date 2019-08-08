@@ -1,0 +1,44 @@
+.flat-card-index {
+  overflow: hidden;
+  height: 160px;
+  width: 900px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  border-radius: 8px;
+}
+
+.flat-card-index img {
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+}
+
+.flat-summary-index {
+  padding: 24px;
+  width: 600px;
+}
+
+.flat-summary-index > p {
+  color: rgba(0,0,0,0.5);
+}
+
+.flat-summary-price-guest {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.flat-summary-price-guest p {
+  font-size: 18px;
+}
+.flat-card-index h3 {
+  font-size: 26px;
+}
+
+.flat-summary-link {
+  color: rgba(0,0,0,0.7);
+  text-decoration: none;
+}
