@@ -3,6 +3,12 @@ body {
   background: white;
 }
 
+.title {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 50px;
+}
+
 .container {
   padding:20px;
   margin: 66px auto;
@@ -42,4 +48,18 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
+.container-background-image {
+  background-image: asset-url('home-background.jpg');
+  height: 800px;
+  background-size: cover;
+  opacity: 0.9;
+  margin-top: 70px;
+}
+
+.explore-container {
+  text-align: center;
+  padding-top: 5%;
+}
+
 
