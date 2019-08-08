@@ -39,4 +39,19 @@
     </div>
   </div>
 
+
+  <div class="new-booking">
+    <div class="new-booking-content">
+      <div>
+        <h2>Add new Booking to <%= @space.name %></h2>
+      </div>
+      <%= simple_form_for [@space, @booking] do |f| %>
+        <%= f.input :date_start %>
+        <%= f.input :date_end %>
+        <%= f.submit "Book Now", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+
+
 </div>
