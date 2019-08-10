@@ -7,24 +7,35 @@ puts 'Creating Users...'
 
 
 
-spencer = User.create!(name: 'Spencer',
+spencer = User.new(name: 'Spencer',
   email: 'spencer@test.com',
   password: 'secret'
 )
 
-ana = User.create!(name: 'Ana',
-  email: 'anabebic.x@gmail.com',
-  password: 'secret')
+spencer.remote_photo_url = "http://res.cloudinary.com/bywalterc/image/upload/v1565441366/yp2k2funhrqlgvjecz0b.jpg"
+spencer.save
 
-walter = User.create!(
+ana = User.new(name: 'Ana',
+  email: 'anabebic.x@gmail.com',
+  password: 'secret',
+  )
+ana.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441302/gijfiyet0ja2cy57oalc.jpg"
+ana.save
+
+walter = User.new(
   name: 'Walter',
   email: 'walter.cegarra@icloud.com',
   password: 'secret'
   )
+walter.remote_photo_url =  'http://res.cloudinary.com/bywalterc/image/upload/v1565440435/uppm4cqhkiyobjurvrw7.jpg'
+walter.save
 
-simona = User.create!(name: 'Simona',
+simona = User.new(name: 'Simona',
   email: 'simona@test.com',
   password: 'secret')
+simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
+simona.save
+
 
 puts "Finished!"
 
