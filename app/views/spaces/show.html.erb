@@ -48,7 +48,7 @@
       <div class="show-new-booking">
         <div class="detail-box new-booking-content">
           <div>
-            <h3>Add new Booking to <%= @space.name %></h3>
+            <h3>Add New Booking</h3>
           </div>
           <%= simple_form_for [@space, @booking] do |f| %>
             <%= f.input :date_start %>
@@ -61,7 +61,7 @@
 
       <div class="detail-box show-bookings">
         <div>
-          <h3>Existing Bookings for <%= @space.name %></h3>
+          <h3>Existing Bookings</h3>
         </div>
 
         <% @space.bookings.each do |booking|  %>
