@@ -6,14 +6,10 @@
 }
 
 .show-page {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
 }
 
 .detail-box {
   overflow: hidden;
-  width: 600px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   border-radius: 8px;
@@ -22,7 +18,8 @@
 }
 
 .detail-box h3 {
-  color: rgba(0,0,0,0.5)
+  color: rgba(0,0,0,0.5);
+  font-size: 1.25rem;
 }
 
 .show-title {
@@ -30,7 +27,7 @@
 }
 
 .show-description {
-  height: 200px;
+  height: 160px;
 }
 
 .show-details {
@@ -60,12 +57,10 @@
 }
 
 .show-new-booking {
-  width: 500px;
-  margin: 50px 0;
+  margin: 0 0 50px 0;
 }
 
 
 .show-bookings {
-   width: 500px;
    margin: 50px 0;
 }
