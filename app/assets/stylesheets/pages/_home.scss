@@ -9,8 +9,8 @@ body {
     font-size: 62px;
     color: white;
   }
-  h2 {
-    font-size: 48px;
+  h4 {
+    font-size: 40px;
     color: white;
   }
 }
@@ -56,7 +56,7 @@ body {
 }
 
 .container-background-image {
-  background-image: asset-url('home-background.jpg');
+  background-image: linear-gradient(rgba(0,0,0,.4)),url('home-background.png');
   height: 800px;
   background-size: cover;
   opacity: 0.9;
