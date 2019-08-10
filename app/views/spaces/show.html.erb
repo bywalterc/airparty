@@ -16,15 +16,16 @@
 
           <p><%= @space.address %></p>
 
-          <p class="show-links">
-            <%= link_to edit_space_path(@space) do %>
-              <i class="far fa-edit"></i>
-            <% end %>
-            <%= link_to space_path(@space), method: :delete do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-
-          </p>
+          <% if current_user == @space.user %>
+            <p class="show-links">
+              <%= link_to edit_space_path(@space) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to space_path(@space), method: :delete do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
+          <% end %>
 
         </div>
       </div>
