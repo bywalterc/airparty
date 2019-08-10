@@ -121,3 +121,19 @@ bunker.remote_photo_url = bunker_url
 bunker.save
 
 puts "Finished!"
+
+puts 'Creating Bookings...'
+
+all_spaces = Space.all
+all_users = User.all
+
+new_booking = Booking.new
+new_booking.user = walter
+new_booking.space = bunker
+new_booking.date_start = DateTime.strptime("09/01/2019", "%m/%d/%Y")
+
+new_booking.date_end = DateTime.strptime("09/14/2019", "%m/%d/%Y")
+new_booking.save
+
+
+puts "Finished!"
