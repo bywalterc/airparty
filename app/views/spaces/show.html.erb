@@ -10,12 +10,15 @@
 
       <div class="detail-box show-title">
 
-        <h2><%= @space.name %></h1>
+        <div class="show-name-owner">
+          <h2><%= @space.name %></h1>
+          <% if current_user == @space.user %>
+              <button class="btn btn-secondary">Owner</button>
+          <% end %>
+        </div>
 
         <div class="show-address-links">
-
           <p><%= @space.address %></p>
-
           <% if current_user == @space.user %>
             <p class="show-links">
               <%= link_to edit_space_path(@space) do %>
@@ -28,6 +31,7 @@
           <% end %>
 
         </div>
+
       </div>
 
       <div class="detail-box show-description">

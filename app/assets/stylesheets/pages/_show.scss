@@ -23,7 +23,7 @@
 }
 
 .show-title {
-  height: 120px;
+  height: 140px;
 }
 
 .show-description {
@@ -45,6 +45,12 @@
 .show-address-links {
   display: flex;
   justify-content: space-between;
+}
+
+.show-name-owner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .show-links a {
