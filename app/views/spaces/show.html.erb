@@ -79,9 +79,9 @@
           </div>
 
           <% @space.bookings.each do |booking|  %>
-            <div>
+            <div class="booking-list">
               <div class="booking-list-item">
-                <p>User:</p>
+                <%= cl_image_tag booking.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <p><%= booking.user.email %></p>
               </div>
               <div class="booking-list-item">
