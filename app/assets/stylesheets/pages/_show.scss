@@ -23,7 +23,7 @@
 }
 
 .show-title {
-  height: 120px;
+  height: 140px;
 }
 
 .show-description {
@@ -47,8 +47,14 @@
   justify-content: space-between;
 }
 
+.show-name-owner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
 .show-links a {
-  padding-left: 16px;
+  padding-right: 14px;
   color: rgba(0,0,0,0.4);
   &:hover {
       text-decoration: none;
@@ -62,7 +68,7 @@
 
 
 .show-bookings {
-   margin: 50px 0;
+   margin: 0 0 50px 0;
 }
 
 .booking-list-item {

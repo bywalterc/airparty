@@ -6,27 +6,32 @@
 
   <div class="row show-page">
 
-    <div class="col-12 col-lg-8 detail-area">
+    <div class="col-12 col-lg-7 detail-area">
 
       <div class="detail-box show-title">
 
-        <h2><%= @space.name %></h1>
+        <div class="show-name-owner">
+          <h2><%= @space.name %></h1>
+          <% if current_user == @space.user %>
+              <button class="btn btn-secondary">Owner</button>
+          <% end %>
+        </div>
 
         <div class="show-address-links">
-
           <p><%= @space.address %></p>
-
-          <p class="show-links">
-            <%= link_to edit_space_path(@space) do %>
-              <i class="far fa-edit"></i>
-            <% end %>
-            <%= link_to space_path(@space), method: :delete do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-
-          </p>
+          <% if current_user == @space.user %>
+            <p class="show-links">
+              <%= link_to edit_space_path(@space) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to space_path(@space), method: :delete do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
+          <% end %>
 
         </div>
+
       </div>
 
       <div class="detail-box show-description">
@@ -44,44 +49,50 @@
       </div>
     </div>
 
-    <div class="col-12 col-lg-4 booking-area">
-      <div class="show-new-booking">
-        <div class="detail-box new-booking-content">
-          <div>
-            <h3>Add New Booking</h3>
+
+    <div class="col-12 col-lg-5 booking-area">
+      <% if current_user != @space.user %>
+        <div class="show-new-booking">
+          <div class="detail-box new-booking-content">
+            <div>
+              <h3>Add New Booking</h3>
+            </div>
+            <%= simple_form_for [@space, @booking] do |f| %>
+              <%= f.input :date_start %>
+              <%= f.input :date_end %>
+              <%= f.submit "Book Now", class: "btn btn-dark" %>
+            <% end %>
           </div>
-          <%= simple_form_for [@space, @booking] do |f| %>
-            <%= f.input :date_start %>
-            <%= f.input :date_end %>
-            <%= f.submit "Book Now", class: "btn btn-dark" %>
+        </div>
+
+      <% else %>
+
+        <div class="detail-box show-bookings">
+          <div>
+            <h3>Existing Bookings</h3>
+          </div>
+
+          <% @space.bookings.each do |booking|  %>
+            <div>
+              <div class="booking-list-item">
+                <p>User:</p>
+                <p><%= booking.user.email %></p>
+              </div>
+              <div class="booking-list-item">
+                <p>From:</p>
+                <p><%= booking.date_start %></p>
+              </div>
+              <div class="booking-list-item border-bottom">
+                <p>To:</p>
+                <p><%= booking.date_end %></p>
+              </div>
+            </div>
           <% end %>
         </div>
-      </div>
-
-
-      <div class="detail-box show-bookings">
-        <div>
-          <h3>Existing Bookings</h3>
-        </div>
-
-        <% @space.bookings.each do |booking|  %>
-          <div>
-            <div class="booking-list-item">
-              <p>User:</p>
-              <p><%= booking.user.email %></p>
-            </div>
-            <div class="booking-list-item">
-              <p>From:</p>
-              <p><%= booking.date_start %></p>
-            </div>
-            <div class="booking-list-item border-bottom">
-              <p>To:</p>
-              <p><%= booking.date_end %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
+
+
   </div>
 
 </div>
