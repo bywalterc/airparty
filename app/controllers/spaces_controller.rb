@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :index]
-  before_action :set_space, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
+  before_action :set_space, only: [ :edit, :update, :destroy]
 
   def index
     @spaces = Space.all.reverse
@@ -8,6 +8,7 @@ class SpacesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @space = Space.find(params[:id])
   end
 
   def new
@@ -15,7 +16,7 @@ class SpacesController < ApplicationController
   end
 
   def create
-    @user = User.all.first
+    @user = current_user
     @space = Space.new(space_params)
     @space.user = @user
     @space.save
