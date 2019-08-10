@@ -15,7 +15,7 @@
           <% if current_user == @space.user %>
               <button class="btn btn-secondary">Owner</button>
           <% else %>
-              <%= cl_image_tag @space.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= cl_image_tag @space.user.photo, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
         </div>
 
