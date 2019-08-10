@@ -19,16 +19,20 @@
 
         <div class="show-address-links">
           <p><%= @space.address %></p>
+
           <% if current_user == @space.user %>
             <p class="show-links">
-              <%= link_to edit_space_path(@space) do %>
-                <i class="far fa-edit"></i>
-              <% end %>
-              <%= link_to space_path(@space), method: :delete do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </p>
+            <%= link_to edit_space_path(@space) do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+            <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, space_path(@space),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+
+          </p>
           <% end %>
+
+
 
         </div>
 
