@@ -18,7 +18,7 @@ ana = User.create!(name: 'Ana',
 
 walter = User.create!(
   name: 'Walter',
-  email: 'walter@test.com',
+  email: 'walter.cegarra@icloud.com',
   password: 'secret'
   )
 
@@ -127,6 +127,7 @@ puts 'Creating Bookings...'
 all_spaces = Space.all
 all_users = User.all
 
+# Returns a random user, customer, who is not the owner for a given space
 def pick_customer_not(space_user)
   all_customers = []
   all_users = User.all
@@ -136,20 +137,38 @@ def pick_customer_not(space_user)
   return customer
 end
 
+# creates a booking for a given user and space, in september
 def create_new_booking_sep(customer, space)
   new_booking = Booking.new
   new_booking.user = customer
   new_booking.space = space
   new_booking.date_start = DateTime.strptime("09/01/2019", "%m/%d/%Y")
-  new_booking.date_end = DateTime.strptime("09/14/2019", "%m/%d/%Y")
+  new_booking.date_end = DateTime.strptime("09/02/2019", "%m/%d/%Y")
   return new_booking
 end
 
+# creates a booking for a given user and space, in october
+def create_new_booking_oct(customer, space)
+  new_booking = Booking.new
+  new_booking.user = customer
+  new_booking.space = space
+  new_booking.date_start = DateTime.strptime("10/14/2019", "%m/%d/%Y")
+  new_booking.date_end = DateTime.strptime("10/14/2019", "%m/%d/%Y")
+  return new_booking
+end
+
+# For each of the spaces seeded, create 2 bookings (1 in Sep, 1 in Oct), for a random customer who is not an owner
 all_spaces.each do |space|
   space_user = space.user
+  # creates first booking in Sep
   customer = ""
   customer = pick_customer_not(space_user)
   new_booking = create_new_booking_sep(customer, space)
+  new_booking.save
+  # creates second booking in Oct
+  customer = ""
+  customer = pick_customer_not(space_user)
+  new_booking = create_new_booking_oct(customer, space)
   new_booking.save
 end
 
