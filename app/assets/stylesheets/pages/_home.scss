@@ -4,15 +4,21 @@ body {
 }
 
 .title {
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-  font-size: 50px;
+  text-shadow: 1px 1px 4px #000000;
+  h1 {
+    font-size: 62px;
+    color: white;
+  }
+  h2 {
+    font-size: 48px;
+    color: white;
+  }
 }
 
 .container {
   padding:20px;
   margin: 66px auto;
-  width:100%;
+  width:1200px;
 }
 
 .index-banner {

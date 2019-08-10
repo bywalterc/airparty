@@ -14,22 +14,23 @@
 
   <% @spaces.each do |space| %>
 
-    <div class="space-card-index">
-      <div class="space-image-index">
-        <%= cl_image_tag(space.photo,
-      width: 400, height: 300, crop: :fill) %>
-      </div>
-      <div class="space-summary-index">
-        <%= link_to space_path(space), {class: "space-summary-link"} do %>
-          <h3><%= space.name %></h3>
-        <% end %>
-        <p>Address: <%= space.address %></p>
-        <div class="space-summary-price-guest">
-          <p><i class="fas fa-user-friends"></i>  <%= space.capacity %></p>
-          <p><i class="fas fa-pound-sign"></i>  <%= space.price %> per night</p>
+    <%= link_to space_path(space), {class: "space-summary-link"} do %>
+      <div class="space-card-index">
+        <div class="space-image-index">
+          <%= cl_image_tag(space.photo,
+        width: 400, height: 300, crop: :fill) %>
+        </div>
+        <div class="space-summary-index">
+            <h3><%= space.name %></h3>
+          <p>Address: <%= space.address %></p>
+          <div class="space-summary-price-guest">
+            <p><i class="fas fa-user-friends"></i>  <%= space.capacity %></p>
+            <p><i class="fas fa-pound-sign"></i>  <%= space.price %> per night</p>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+
   <% end %>
 </div>
 
