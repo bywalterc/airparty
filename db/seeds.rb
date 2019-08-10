@@ -127,13 +127,31 @@ puts 'Creating Bookings...'
 all_spaces = Space.all
 all_users = User.all
 
-new_booking = Booking.new
-new_booking.user = walter
-new_booking.space = bunker
-new_booking.date_start = DateTime.strptime("09/01/2019", "%m/%d/%Y")
+def pick_customer_not(space_user)
+  all_customers = []
+  all_users = User.all
+  customer = ""
+  all_customers = all_users.reject {|x| x == space_user }
+  customer = all_customers.sample
+  return customer
+end
 
-new_booking.date_end = DateTime.strptime("09/14/2019", "%m/%d/%Y")
-new_booking.save
+def create_new_booking_sep(customer, space)
+  new_booking = Booking.new
+  new_booking.user = customer
+  new_booking.space = space
+  new_booking.date_start = DateTime.strptime("09/01/2019", "%m/%d/%Y")
+  new_booking.date_end = DateTime.strptime("09/14/2019", "%m/%d/%Y")
+  return new_booking
+end
+
+all_spaces.each do |space|
+  space_user = space.user
+  customer = ""
+  customer = pick_customer_not(space_user)
+  new_booking = create_new_booking_sep(customer, space)
+  new_booking.save
+end
 
 
 puts "Finished!"
