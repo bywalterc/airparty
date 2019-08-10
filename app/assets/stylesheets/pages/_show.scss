@@ -64,3 +64,8 @@
 .show-bookings {
    margin: 50px 0;
 }
+
+.booking-list-item {
+  display: flex;
+  justify-content: space-between;
+}
