@@ -12,11 +12,7 @@
 
         <div class="show-name-owner">
           <h2><%= @space.name %></h1>
-          <% if current_user == @space.user %>
-              <button class="btn btn-secondary">Owner</button>
-          <% else %>
-              <%= cl_image_tag @space.user.photo, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
+          <%= cl_image_tag @space.user.photo, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </div>
 
         <div class="show-address-links">
