@@ -1,0 +1,22 @@
+.test {
+  height: 500px;
+  width: 300px;
+  background-color: red;
+  color: red;
+}
+
+.show-container {
+  display: flex;
+  margin-top: 250px;
+}
+
+.profile-card {
+  width: 400px;
+  display: flex;
+}
+
+.blocker {
+  height: 500px;
+  background-color: red;
+  display: block;
+}
