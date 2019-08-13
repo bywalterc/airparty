@@ -3,7 +3,11 @@ class SpacesController < ApplicationController
   before_action :set_space, only: [ :edit, :update, :destroy]
 
   def index
-    @spaces = Space.all.reverse
+    if params[:query].present?
+      @spaces = Space.search_by_space(params[:query])
+    else
+      @spaces = Space.all.reverse
+    end
   end
 
   def show
