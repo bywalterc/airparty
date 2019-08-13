@@ -44,7 +44,7 @@ puts "Finished!"
 puts 'Creating Spaces...'
 
 palace = Space.new(name: "Ana's Palace",
-  address: "6 Palace Place",
+  address: "135 Kingsland Road, London",
   price: 100,
   category: "Party space",
   capacity: 75,
@@ -55,7 +55,7 @@ palace.remote_photo_url = palace_url
 palace.save
 
 terrace = Space.new(name: "Ana's Apartment Terrace",
-  address: "8 Palace Place",
+  address: "20 Shoreditch High Street, London",
   price: 50,
   category: "Party space",
   capacity: 30,
@@ -66,7 +66,7 @@ terrace.remote_photo_url = terrace_url
 terrace.save
 
 roof = Space.new(name: "Simona's Roof Terrace",
-  address: '5 Roof Road ',
+  address: '30 St Mary Axe, London',
   price: 50,
   category: 'Party space',
   capacity: 65,
@@ -77,7 +77,7 @@ roof.remote_photo_url = roof_url
 roof.save
 
 sauna = Space.new(name: "Simona's Sauna and Pool",
-  address: '5 Sauna Street',
+  address: '5 Notting Hill Gate, London',
   price: 75,
   category: 'Party space',
   capacity: 15,
@@ -88,7 +88,7 @@ sauna.remote_photo_url = sauna_url
 sauna.save
 
 vinyard = Space.new(name: "Walter's Vinyard",
-  address: '3 Drunk Way',
+  address: '12 Parkgate Road, London',
   price: 1750,
   category: 'Wedding space',
   capacity: 200,
@@ -99,7 +99,7 @@ vinyard.remote_photo_url = vinyard_url
 vinyard.save
 
 summer = Space.new(name: "Walter's Summer House",
-  address: '4 Drunk Way',
+  address: '100 Southwark Street, London',
   price: 80,
   category: 'BBQ area',
   capacity: 50,
@@ -110,7 +110,7 @@ summer.remote_photo_url = summer_url
 summer.save
 
 tennis = Space.new(name: "Spencer's Tennis Court",
-  address: '3 Nadal Way',
+  address: '302 Dalston Lane, London',
   price: 55,
   category: 'Recreation area',
   capacity: 8,
@@ -121,7 +121,7 @@ tennis.remote_photo_url = tennis_url
 tennis.save
 
 bunker = Space.new(name: "Spencer's Secret Bunker",
-  address: '3 Normandy Heights',
+  address: '74 Chalk Farm Road',
   price: 175,
   category: 'Dinner party venue',
   capacity: 20,
