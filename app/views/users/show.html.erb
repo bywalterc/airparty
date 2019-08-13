@@ -9,7 +9,7 @@
 
     <div class="row show-page">
 
-      <div class="col12 col-lg-6">
+      <div class="col12 col-lg-4">
           <div class="spaces-container">
             <h2>Your spaces</h2>
             <% @spaces.each do |space| %>
@@ -22,7 +22,7 @@
                   <p><strong>Category: </strong><%= space.category %></p>
                 </div>
                 <div class="space-photo">
-                <%= cl_image_tag(space.photo, :width => 120, :height => 120, crop: :fill, radius: 5) %>
+                <%= cl_image_tag(space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
                 </div>
               </div>
               <% end %>
@@ -30,27 +30,48 @@
           </div>
       </div>
 
-      <div class="col-12 col-lg-6 booking-area">
+      <div class="col-12 col-lg-4 booking-area">
         <div class="bookings-container">
           <h2>Upcoming bookings</h2>
+          <% @spaces.each do |space| %>
+            <% space.bookings.each do |booking| %>
+              <div class="profile-card booking-card">
+                <div class="booking-info">
+                   <p><strong>Customer:</strong> <%= booking.user.name %></p>
+                   <p><strong>Space:</strong> <%= space.name %></p>
+                   <p><strong>From:</strong> <%= booking.date_start %></p>
+                   <p><strong>Until:</strong> <%= booking.date_end %></p>
+                </div>
+                <div class="space-photo">
+                  <%= cl_image_tag(space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-lg-4 booking-area">
+        <div class="bookings-container">
+          <h2>Your reservations</h2>
           <% @bookings.each do |booking| %>
             <div class="profile-card booking-card">
               <div class="booking-info">
                  <p><strong>Space:</strong> <%= booking.space.name %></p>
-                 <p><strong>Start Date:</strong> <%= booking.date_start %></p>
-                 <p><strong>End Date:</strong> <%= booking.date_end %></p>
+                 <p><strong>From:</strong> <%= booking.date_start %></p>
+                 <p><strong>Until:</strong> <%= booking.date_end %></p>
               </div>
               <div class="space-photo">
                 <%= cl_image_tag(booking.space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
               </div>
             </div>
           <% end %>
-
         </div>
-
       </div>
-    </div>
 
+
+    </div>
   </div>
 
 
