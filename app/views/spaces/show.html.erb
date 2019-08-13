@@ -54,6 +54,10 @@
 
     <div class="col-12 col-lg-5 booking-area">
 
+      <div class="photo-box" style="background-image: url(<%= cl_image_path @space.photo %>); background-size: cover; background-position: center" >
+        <p>.</p>
+      </div>
+
       <% if current_user != @space.user %>
         <div class="show-new-booking">
           <div class="detail-box new-booking-content">
