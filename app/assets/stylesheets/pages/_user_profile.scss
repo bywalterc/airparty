@@ -1,16 +1,5 @@
-body {
-  font-size: 0.8rem;
-}
-
-h1 {
-  padding-left: 75px;
-}
-
-h2 {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 15px;
+.user-name {
+  padding-left: 0;
 }
 
 #login-title {
@@ -34,6 +23,13 @@ h2 {
   margin-right: 5px;
   border-radius: 10px;
   margin-bottom: 30px;
+
+  h2 {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+  }
 }
 
 .bookings-container {
@@ -42,6 +38,12 @@ h2 {
   border-radius: 10px;
   margin-bottom: 30px;
 
+  h2 {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+  }
 }
 
 .show-container {

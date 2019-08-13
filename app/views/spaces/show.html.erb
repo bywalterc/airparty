@@ -54,6 +54,10 @@
 
     <div class="col-12 col-lg-5 booking-area">
 
+      <div class="photo-box" style="background-image: url(<%= cl_image_path @space.photo %>); background-size: cover; background-position: center" >
+        <p>.</p>
+      </div>
+
       <% if current_user != @space.user %>
         <div class="show-new-booking">
           <div class="detail-box new-booking-content">
@@ -97,6 +101,13 @@
 
 
   </div>
+ <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 
 </div>
 
