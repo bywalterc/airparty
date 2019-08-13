@@ -1,18 +1,33 @@
 class SpacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
-  before_action :set_space, only: [ :edit, :update, :destroy]
+  before_action :set_space, only: [:edit, :update, :destroy]
 
   def index
     if params[:query].present?
-      @spaces = Space.search_by_space(params[:query])
+      @spaces = Space.search_by_space(params[:query]).geocoded.reverse
     else
-      @spaces = Space.all.reverse
+      @spaces = Space.geocoded.reverse
     end
+
+    @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { space: space })
+      }
+    end
+    @spaces = Space.all.reverse
   end
 
   def show
     @booking = Booking.new
     @space = Space.find(params[:id])
+    @markers = [{
+        lat: @space.latitude,
+        lng: @space.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { space: @space })
+
+      }]
   end
 
   def new
@@ -49,6 +64,4 @@ class SpacesController < ApplicationController
   def set_space
     @space = Space.find(params[:id])
   end
-
 end
-
