@@ -65,8 +65,8 @@
               <h3>Add New Booking</h3>
             </div>
             <%= simple_form_for [@space, @booking] do |f| %>
-              <%= f.input :date_start %>
-              <%= f.input :date_end %>
+              <%= f.input :date_start, as: :string, required: false, input_html: { id: "range_start" } %>
+              <%= f.input :date_end, as: :string, required: false, input_html: { id: "range_end" }%>
               <%= f.submit "Book Now", class: "btn btn-dark" %>
             <% end %>
           </div>
