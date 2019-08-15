@@ -67,8 +67,6 @@
 
 .profile-card {
   display: block;
-  display: flex;
-  justify-content: space-between;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -82,6 +80,7 @@
 .space-card {
   display: flex;
   position: relative;
+  justify-content: space-between;
 }
 
 .space-photo {

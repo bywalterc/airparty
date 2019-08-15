@@ -14,33 +14,39 @@
             <h2>Your spaces</h2>
             <% @spaces.each do |space| %>
 
-            <%= link_to space_path(space), {class: "space-summary-link"} do %>
-              <div class="profile-card space-card">
-                <div class="space-info">
-                  <p><strong>Space: </strong><%= space.name %></p>
-                  <p><strong>Address: </strong><%= space.address %></p>
-                  <p><strong>Price: </strong>£<%= space.price %></p>
-                  <p><strong>Category: </strong><%= space.category %></p>
-                </div>
-                <div class="space-photo">
-                <%= cl_image_tag(space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
-                </div>
-              </div>
-            <% end %>
-
-            <% space.bookings.each do |booking| %>
-              <div class="profile-card booking-card">
-                <div class="booking-info">
-                   <p><strong>Customer:</strong> <%= booking.user.name %></p>
-                   <p><strong>Space:</strong> <%= space.name %></p>
-                   <p><strong>From:</strong> <%= booking.date_start %></p>
-                   <p><strong>Until:</strong> <%= booking.date_end %></p>
-                </div>
-                <div class="space-photo">
+            <div class="profile-card">
+              <%= link_to space_path(space), {class: "space-summary-link"} do %>
+                <div class="space-card">
+                  <div class="space-info">
+                    <p><strong>Space: </strong><%= space.name %></p>
+                    <p><strong>Address: </strong><%= space.address %></p>
+                    <p><strong>Price: </strong>£<%= space.price %></p>
+                    <p><strong>Category: </strong><%= space.category %></p>
+                  </div>
+                  <div class="space-photo">
                   <%= cl_image_tag(space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
+                  </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+
+              <% space.bookings.each do |booking| %>
+                <div class="booking-list">
+                  <div class="booking-list-item">
+                    <%= cl_image_tag booking.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <p><%= booking.user.email %></p>
+                  </div>
+                  <div class="booking-list-item">
+                    <p>From:</p>
+                    <p><%= booking.date_start %></p>
+                  </div>
+                  <div class="booking-list-item border-bottom">
+                    <p>To:</p>
+                    <p><%= booking.date_end %></p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
 
             <% end %>
           </div>
