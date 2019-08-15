@@ -18,10 +18,13 @@ initMapbox();
 
 // JS to implement show / hide bookings button on User Profile page
 
-const bookingsButton = document.getElementById("bookings-button");
-const bookingsSection = document.getElementById("bookings-section");
+const bookings = document.querySelectorAll(".bookings");
 
-bookingsButton.addEventListener("click", (event) => {
-  bookingsSection.classList.toggle("show");
-  bookingsSection.classList.toggle("hide");
+bookings.forEach((booking) => {
+  const bookingsButton = booking.querySelector(".bookings-button");
+  const bookingsSection = booking.querySelector(".bookings-section");
+  bookingsButton.addEventListener("click", (event) => {
+    bookingsSection.classList.toggle("show");
+    bookingsSection.classList.toggle("hide");
+  });
 });
