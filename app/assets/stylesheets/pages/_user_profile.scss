@@ -17,6 +17,12 @@
   padding-right: 20px;
 }
 
+.profile-container {
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+}
 .spaces-container {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   padding-bottom: 10px;
@@ -30,6 +36,12 @@
     padding-right: 20px;
     padding-bottom: 15px;
   }
+}
+
+.existing-booking {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: rgba(0,0,0,0.5);
 }
 
 .bookings-container {
@@ -81,6 +93,9 @@
   display: flex;
   position: relative;
   justify-content: space-between;
+  p {
+    margin-bottom: 4px;
+  }
 }
 
 .space-photo {
@@ -99,5 +114,7 @@
 
 .booking-info {
   // width: 350px;
+  display: flex;
+  justify-content: space-between;
 }
 
