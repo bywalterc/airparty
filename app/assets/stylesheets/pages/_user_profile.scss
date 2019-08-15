@@ -19,7 +19,7 @@
 
 .profile-container {
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 16px;
   }
 }
@@ -40,7 +40,7 @@
 
 .existing-booking {
   margin-top: 16px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(0,0,0,0.5);
 }
 
@@ -87,20 +87,35 @@
   padding: 24px;
   margin-right: 20px;
   margin-left: 20px;
+  p {
+    margin-bottom: 4px;
+  }
 }
 
 .space-card {
   display: flex;
   position: relative;
   justify-content: space-between;
-  p {
-    margin-bottom: 4px;
-  }
 }
 
 .space-photo {
   right: 16px;
   top: -20px;
+}
+
+.bookings-button {
+  margin: 16px 0px;
+}
+
+#bookings-section {
+  padding-left: 40px;
+}
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .booking-card {
@@ -110,6 +125,10 @@
   border-bottom: 1px solid #DEE2E6;
   border-radius: 0px;
   line-height: 15px;
+  padding: 16px;
+  p {
+    margin-bottom: 8px;
+  }
 }
 
 .booking-info {

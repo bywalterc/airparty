@@ -14,3 +14,17 @@ flatpickr(".datepicker", {
 });
 
 initMapbox();
+
+
+// JS to implement show / hide bookings button on User Profile page
+
+const bookings = document.querySelectorAll(".bookings");
+
+bookings.forEach((booking) => {
+  const bookingsButton = booking.querySelector(".bookings-button");
+  const bookingsSection = booking.querySelector(".bookings-section");
+  bookingsButton.addEventListener("click", (event) => {
+    bookingsSection.classList.toggle("show");
+    bookingsSection.classList.toggle("hide");
+  });
+});

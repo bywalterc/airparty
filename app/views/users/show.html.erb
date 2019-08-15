@@ -18,7 +18,7 @@
               <%= link_to space_path(space), {class: "space-summary-link"} do %>
                 <div class="space-card">
                   <div class="space-info">
-                    <h3><strong>Space: </strong><%= space.name %></h3>
+                    <h3>Space: <strong><%= space.name %></h3></strong>
                     <p><strong>Address: </strong><%= space.address %></p>
                     <p><strong>Category: </strong><%= space.category %></p>
                     <p><strong>Price: </strong>£<%= space.price %></p>
@@ -29,24 +29,36 @@
                 </div>
               <% end %>
 
-              <div class="existing-booking">Existing Bookings:</div>
 
-              <% space.bookings.each do |booking| %>
-                <div class="booking-list">
-                  <div class="booking-list-item">
-                    <%= cl_image_tag booking.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                    <p><%= booking.user.email %></p>
-                  </div>
-                  <div class="booking-list-item">
-                    <p>From:</p>
-                    <p><%= booking.date_start %></p>
-                  </div>
-                  <div class="booking-list-item border-bottom">
-                    <p>To:</p>
-                    <p><%= booking.date_end %></p>
-                  </div>
+              <div class="bookings">
+                <!-- Button to toggle show / hide bookings -->
+                <button type="button" class="btn btn-secondary btn-sm bookings-button">Show / Hide Bookings</button>
+
+                <div class="bookings-section hide">
+
+                  <div class="existing-booking">Existing Bookings:</div>
+
+                  <% space.bookings.each do |booking| %>
+                    <div class="booking-list">
+                      <div class="booking-list-item">
+                        <%= cl_image_tag booking.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                        <p><%= booking.user.email %></p>
+                      </div>
+                      <div class="booking-list-item">
+                        <p>From:</p>
+                        <p><%= booking.date_start %></p>
+                      </div>
+                      <div class="booking-list-item border-bottom">
+                        <p>To:</p>
+                        <p><%= booking.date_end %></p>
+                      </div>
+                    </div>
+                  <% end %>
+
                 </div>
-              <% end %>
+
+              </div>
+
             </div>
 
 
@@ -58,20 +70,22 @@
       <div class="col-12 col-lg-5 booking-area">
         <div class="bookings-container">
           <h2>Your own reservations</h2>
+
           <% @bookings.each do |booking| %>
-            <div class="profile-card booking-card">
-              <div class="booking-info">
-                <%= link_to space_path(booking.space), {class: "space-summary-link"} do %>
+            <div>
+              <%= link_to space_path(booking.space), {class: "space-summary-link"} do %>
+                <div class="booking-info booking-card">
                   <div class="booking-text">
-                    <h3><strong>Space:</strong> <%= booking.space.name %></h3>
+                    <h3>Space: <strong><%= booking.space.name %></strong></h3>
                     <p><strong>From:</strong> <%= booking.date_start %></p>
                     <p><strong>Until:</strong> <%= booking.date_end %></p>
                   </div>
                   <div class="space-photo">
                     <%= cl_image_tag(booking.space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
                   </div>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
+
             </div>
           <% end %>
         </div>
