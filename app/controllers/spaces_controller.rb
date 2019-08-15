@@ -16,7 +16,6 @@ class SpacesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { space: space })
       }
     end
-    @spaces = Space.all.reverse
   end
 
   def show
