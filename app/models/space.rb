@@ -4,6 +4,7 @@ class Space < ApplicationRecord
 
   belongs_to :user
   has_many :bookings
+  has_many :reviews, dependent: :destroy
 
   validates :name, :address, :price, :category, :capacity, :user, presence: true
 

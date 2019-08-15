@@ -1,0 +1,10 @@
+<div class="review" style="display:flex; align-items: center; justify-content: space-between;">
+  <p><%= review.content %></p>
+  <div style="display:flex;">
+    <% review.rating.times do %>
+      <i class="fas fa-star icon-stars"></i>
+    <% end %>
+  </div>
+</div>
+
+
