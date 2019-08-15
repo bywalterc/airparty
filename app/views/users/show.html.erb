@@ -72,8 +72,8 @@
           <h2>Your own reservations</h2>
           <% @bookings.each do |booking| %>
             <div class="profile-card booking-card">
-              <div class="booking-info">
-                <%= link_to space_path(booking.space), {class: "space-summary-link"} do %>
+              <%= link_to space_path(booking.space), {class: "space-summary-link"} do %>
+                <div class="booking-info">
                   <div class="booking-text">
                     <h3><strong>Space:</strong> <%= booking.space.name %></h3>
                     <p><strong>From:</strong> <%= booking.date_start %></p>
@@ -82,8 +82,9 @@
                   <div class="space-photo">
                     <%= cl_image_tag(booking.space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
                   </div>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
+
             </div>
           <% end %>
         </div>
