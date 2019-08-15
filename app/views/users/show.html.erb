@@ -9,10 +9,11 @@
 
     <div class="row show-page">
 
-      <div class="col12 col-lg-4">
+      <div class="col12 col-lg-7">
           <div class="spaces-container">
             <h2>Your spaces</h2>
             <% @spaces.each do |space| %>
+
             <%= link_to space_path(space), {class: "space-summary-link"} do %>
               <div class="profile-card space-card">
                 <div class="space-info">
@@ -25,15 +26,8 @@
                 <%= cl_image_tag(space.photo, :width => 80, :height => 80, crop: :fill, radius: 5) %>
                 </div>
               </div>
-              <% end %>
             <% end %>
-          </div>
-      </div>
 
-      <div class="col-12 col-lg-4 booking-area">
-        <div class="bookings-container">
-          <h2>Upcoming bookings</h2>
-          <% @spaces.each do |space| %>
             <% space.bookings.each do |booking| %>
               <div class="profile-card booking-card">
                 <div class="booking-info">
@@ -47,14 +41,15 @@
                 </div>
               </div>
             <% end %>
-          <% end %>
-        </div>
+
+            <% end %>
+          </div>
       </div>
 
 
-      <div class="col-12 col-lg-4 booking-area">
+      <div class="col-12 col-lg-5 booking-area">
         <div class="bookings-container">
-          <h2>Your reservations</h2>
+          <h2>Your own reservations</h2>
           <% @bookings.each do |booking| %>
             <div class="profile-card booking-card">
               <div class="booking-info">
