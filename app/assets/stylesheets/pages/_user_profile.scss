@@ -103,6 +103,21 @@
   top: -20px;
 }
 
+.bookings-button {
+  margin: 16px 0px;
+}
+
+#bookings-section {
+  padding-left: 40px;
+}
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 .booking-card {
   display: flex;
   justify-content: space-between;

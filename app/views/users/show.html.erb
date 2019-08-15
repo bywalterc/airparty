@@ -29,24 +29,32 @@
                 </div>
               <% end %>
 
-              <div class="existing-booking">Existing Bookings:</div>
+              <!-- Button to toggle show / hide bookings -->
+              <button type="button" class="btn btn-secondary btn-sm bookings-button" id="bookings-button">Show / Hide Bookings</button>
 
-              <% space.bookings.each do |booking| %>
-                <div class="booking-list">
-                  <div class="booking-list-item">
-                    <%= cl_image_tag booking.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                    <p><%= booking.user.email %></p>
+              <div id="bookings-section" class="hide">
+
+                <div class="existing-booking">Existing Bookings:</div>
+
+                <% space.bookings.each do |booking| %>
+                  <div class="booking-list">
+                    <div class="booking-list-item">
+                      <%= cl_image_tag booking.user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                      <p><%= booking.user.email %></p>
+                    </div>
+                    <div class="booking-list-item">
+                      <p>From:</p>
+                      <p><%= booking.date_start %></p>
+                    </div>
+                    <div class="booking-list-item border-bottom">
+                      <p>To:</p>
+                      <p><%= booking.date_end %></p>
+                    </div>
                   </div>
-                  <div class="booking-list-item">
-                    <p>From:</p>
-                    <p><%= booking.date_start %></p>
-                  </div>
-                  <div class="booking-list-item border-bottom">
-                    <p>To:</p>
-                    <p><%= booking.date_end %></p>
-                  </div>
-                </div>
-              <% end %>
+                <% end %>
+
+              </div>
+
             </div>
 
 
