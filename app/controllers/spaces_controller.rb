@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
-  before_action :set_space, only: [:edit, :update, :destroy]
+  before_action :set_space, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
@@ -20,6 +20,7 @@ class SpacesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
     @space = Space.find(params[:id])
     @markers = [{
         lat: @space.latitude,

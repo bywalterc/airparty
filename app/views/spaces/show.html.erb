@@ -101,6 +101,30 @@
 
 
   </div>
+
+<h1><%= "Read All Reviews" %></small></h1>
+<h4>
+  <%= pluralize @space.reviews.size, "review" %>
+</h4>
+
+<div id="reviews">
+  <% if @space.reviews.blank? %>
+    Be the first to leave a review for <%= @space.name %>
+  <% else %>
+    <% @space.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+<div>
+  <%= render 'reviews/form', space: @space, review: @review %>
+</div>
+
+
+
+
+
+
  <div
   id="map"
   style="width: 100%;
