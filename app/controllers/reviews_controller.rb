@@ -4,16 +4,21 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.space = @space
     if @review.save
-      redirect_to space_path(@space)
+      respond_to do |format|
+        format.html { redirect_to space_path(@space) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      @booking = Booking.new
-      render 'spaces/show'
+      respond_to do |format|
+        format.html { render 'space/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :rating)
   end
 end

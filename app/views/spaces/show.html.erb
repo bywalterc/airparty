@@ -102,10 +102,10 @@
 
   </div>
 
-<h1><%= @space.name %> <small><%= @space.address %></small></h1>
-<h2>
+<h1><%= "Read All Reviews" %></small></h1>
+<h4>
   <%= pluralize @space.reviews.size, "review" %>
-</h2>
+</h4>
 
 <div id="reviews">
   <% if @space.reviews.blank? %>
@@ -115,11 +115,10 @@
       <%= render 'reviews/show', review: review %>
     <% end %>
   <% end %>
-
-<%= render 'reviews/form', space: @space, review: @review %>
-
 </div>
-
+<div>
+  <%= render 'reviews/form', space: @space, review: @review %>
+</div>
 
 
 
