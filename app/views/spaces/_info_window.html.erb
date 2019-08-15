@@ -1,2 +1,7 @@
-<h2><%= space.name %></h2>
-<p><%= space.address %></p>
+<%= link_to space_path(space), {class: "space-summary-link"} do %>
+  <h3><%= space.name %></h3>
+  <p>Category: <%= space.category %></p>
+  <div>
+    <%= cl_image_tag(space.photo, :width => 200, :height => 80, crop: :fill, radius: 5) %>
+  </div>
+<% end %>
