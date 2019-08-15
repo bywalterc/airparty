@@ -168,6 +168,15 @@ def create_new_booking_oct(customer, space)
   return new_booking
 end
 
+def create_new_booking_jan(customer, space)
+  new_booking = Booking.new
+  new_booking.user = customer
+  new_booking.space = space
+  new_booking.date_start = DateTime.strptime("1/26/2020", "%m/%d/%Y")
+  new_booking.date_end = DateTime.strptime("1/27/2020", "%m/%d/%Y")
+  return new_booking
+end
+
 # For each of the spaces seeded, create 2 bookings (1 in Sep, 1 in Oct), for a random customer who is not an owner
 all_spaces.each do |space|
   space_user = space.user
@@ -180,6 +189,11 @@ all_spaces.each do |space|
   customer = ""
   customer = pick_customer_not(space_user)
   new_booking = create_new_booking_oct(customer, space)
+  new_booking.save
+  # creates third booking in Jan
+  customer = ""
+  customer = pick_customer_not(space_user)
+  new_booking = create_new_booking_jan(customer, space)
   new_booking.save
 end
 
