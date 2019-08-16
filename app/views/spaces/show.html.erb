@@ -109,20 +109,34 @@
   </div>
 
 
-<h1><%= "Read All Reviews" %></small></h1>
+<h1>Reviews for <%= @space.name %></h1>
 <h4>
   <%= pluralize @space.reviews.size, "review" %>
 </h4>
 
+<% if @space.reviews.blank? %>
+  Be the first to leave a review for <%= @space.name %>
+<% end %>
+
+<div>
+  <button type="button" class="btn btn-secondary btn-sm write-rev-button">Write a review</button>
+</div>
+
+<!-- Only show the read button if there are reviews to read -->
+<% unless  @space.reviews.blank? %>
+<div>
+  <button type="button" class="btn btn-secondary btn-sm read-rev-button">Read all reviews</button>
+</div>
+<% end %>
+
 <div id="reviews">
-  <% if @space.reviews.blank? %>
-    Be the first to leave a review for <%= @space.name %>
-  <% else %>
+  <% unless @space.reviews.blank? %>
     <% @space.reviews.each do |review| %>
       <%= render 'reviews/show', review: review %>
     <% end %>
   <% end %>
 </div>
+
 <div>
   <%= render 'reviews/form', space: @space, review: @review %>
 </div>
