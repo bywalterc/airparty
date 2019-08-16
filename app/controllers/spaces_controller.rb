@@ -5,8 +5,10 @@ class SpacesController < ApplicationController
   def index
     if params[:query].present?
       @spaces = Space.search_by_space(params[:query]).geocoded.reverse
+      @spaces_all = Space.geocoded
     else
       @spaces = Space.geocoded.reverse
+      @spaces_all = Space.geocoded
     end
 
     @markers = @spaces.map do |space|
