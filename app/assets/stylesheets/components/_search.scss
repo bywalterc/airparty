@@ -1,5 +1,11 @@
 .search-bar {
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
   margin-bottom: 48px;
+  text-align: center;
+}
+
+.search-button {
+  padding: 8px 48px;
+  margin-top: 40px
 }
