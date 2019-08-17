@@ -25,6 +25,11 @@
   color: rgba(0,0,0,0.5);
 }
 
+.name-rating {
+  display: flex;
+  justify-content: space-between;
+}
+
 .space-summary-price-guest {
   display: flex;
   justify-content: space-between;

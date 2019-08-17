@@ -15,6 +15,30 @@
 <div class="container show-page">
 
   <div class="row">
+    <div class="col-12 col-lg-7 detail-area">
+
+
+      <div class="navigation">
+
+        <% if (@space_index + 1) <= (@number_spaces - 1) %>
+          <%= link_to space_path(@next_space) do %>
+            <h1><</h1>
+          <% end %>
+        <% else %>
+          <h1></h1>
+        <% end %>
+
+        <% if (@space_index - 1) >= 0 %>
+          <%= link_to space_path(@prev_space) do %>
+            <h1>></h1>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
 
     <div class="col-12 col-lg-7 detail-area">
 
@@ -26,7 +50,7 @@
             <% unless @space.reviews.count == 0 %>
               <div style="display:flex;">
                 <% @average_rating.times do %>
-                  <i class="fas fa-star icon-stars"></i>
+                  <i class="fas fa-star icon-stars-lg"></i>
                 <% end %>
               </div>
             <% end %>
@@ -145,11 +169,13 @@
   </div>
 
   <div class="review-buttons">
+
     <% if current_user %>
       <div>
         <button type="button" class="btn btn-secondary btn-sm write-rev-button">Write a review</button>
       </div>
     <% end %>
+
     <!-- Only show the read button if there are reviews to read -->
     <% unless  @space.reviews.blank? %>
       <div>
