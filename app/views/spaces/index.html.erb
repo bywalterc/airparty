@@ -7,23 +7,39 @@
 
 
 
-  <div>
-    <%= form_tag spaces_path, method: :get do %>
-      <div class="search-bar">
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a space for your party"
-        %>
-        <%= submit_tag "Search", class: "btn btn-dark" %>
+  <div class="row">
+    <div class="col12 col-lg-6">
+      <div class="align-middle">
+        <%= form_tag spaces_path, method: :get do %>
+          <div class="search-bar">
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a space for your party"
+              %>
+            <%= submit_tag "Search", class: "btn btn-dark search-button" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+
+    <div
+      class="col12 col-lg-6"
+      id="map"
+      style="width: 100%;
+      height: 300px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+
   </div>
 
   <div class="index-title">
-    <h2> Our Spaces (<%= @spaces.count %>)</h2>
-    <div class="new-space">
-    </div>
+    <% if @spaces.count == @spaces_all.count %>
+      <h2> Our Spaces (<%= @spaces.count %>)</h2>
+    <% else %>
+      <h2> Our Spaces (<%= @spaces.count %> of <%= @spaces_all.count %>)</h2>
+    <% end %>
   </div>
 
   <% @spaces.each do |space| %>
@@ -45,14 +61,6 @@
       </div>
     <% end %>
 <% end %>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
 
 
 </div>

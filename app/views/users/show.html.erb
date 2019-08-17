@@ -18,7 +18,7 @@
               <%= link_to space_path(space), {class: "space-summary-link"} do %>
                 <div class="space-card">
                   <div class="space-info">
-                    <h3>Space: <strong><%= space.name %></h3></strong>
+                    <h3><strong><%= space.name %></h3></strong>
                     <p><strong>Address: </strong><%= space.address %></p>
                     <p><strong>Category: </strong><%= space.category %></p>
                     <p><strong>Price: </strong>£<%= space.price %></p>
@@ -76,7 +76,7 @@
               <%= link_to space_path(booking.space), {class: "space-summary-link"} do %>
                 <div class="booking-info booking-card">
                   <div class="booking-text">
-                    <h3>Space: <strong><%= booking.space.name %></strong></h3>
+                    <h3><strong><%= booking.space.name %></strong></h3>
                     <p><strong>From:</strong> <%= booking.date_start %></p>
                     <p><strong>Until:</strong> <%= booking.date_end %></p>
                   </div>

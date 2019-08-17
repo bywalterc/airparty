@@ -28,3 +28,21 @@ bookings.forEach((booking) => {
     bookingsSection.classList.toggle("hide");
   });
 });
+
+// JS to implement show / hide of form to write new review
+
+const writeRevButton = document.querySelector(".write-rev-button");
+const writeRevSection = document.querySelector(".new-review");
+writeRevButton.addEventListener("click", (event) => {
+  writeRevSection.classList.toggle("show");
+  writeRevSection.classList.toggle("hide");
+});
+
+// JS to implement show / hide of form to display all reviews
+
+const readRevButton = document.querySelector(".read-rev-button");
+const readRevSection = document.querySelector(".display-review");
+readRevButton.addEventListener("click", (event) => {
+  readRevSection.classList.toggle("show");
+  readRevSection.classList.toggle("hide");
+});

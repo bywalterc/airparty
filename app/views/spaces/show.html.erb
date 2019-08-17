@@ -1,17 +1,36 @@
+<!-- Calculate Average rating of reviews -->
+<% unless @space.reviews.count == 0 %>
+  <% @sum_ratings = 0 %>
+  <% @space.reviews.each do |review| %>
+      <% @sum_ratings = @sum_ratings + review.rating %>
+  <% end %>
+  <% @average_rating = @sum_ratings / @space.reviews.count %>
+<% end %>
+<!--  -->
+
 <div class="banner-img">
   <%= cl_image_tag(@space.photo, crop: :fill) %>
 </div>
 
-<div class="container">
+<div class="container show-page">
 
-  <div class="row show-page">
+  <div class="row">
 
     <div class="col-12 col-lg-7 detail-area">
 
       <div class="detail-box show-title">
 
         <div class="show-name-owner">
-          <h2><%= @space.name %></h1>
+          <div>
+            <h1><%= @space.name %></h1>
+            <% unless @space.reviews.count == 0 %>
+              <div style="display:flex;">
+                <% @average_rating.times do %>
+                  <i class="fas fa-star icon-stars"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
           <%= cl_image_tag @space.user.photo, class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </div>
 
@@ -29,7 +48,6 @@
 
           </p>
           <% end %>
-
 
 
         </div>
@@ -54,7 +72,7 @@
 
     <div class="col-12 col-lg-5 booking-area">
 
-      <div class="photo-box">
+      <div class="map-box">
         <div
           id="map"
           style="width: 100%;
@@ -105,26 +123,57 @@
       <% end %>
     </div>
 
-
   </div>
 
 
-<h1><%= "Read All Reviews" %></small></h1>
-<h4>
-  <%= pluralize @space.reviews.size, "review" %>
-</h4>
+  <div class="review-heading">
+    <h2 class="review-title">Reviews for <%= @space.name %></h2>
 
-<div id="reviews">
-  <% if @space.reviews.blank? %>
-    Be the first to leave a review for <%= @space.name %>
-  <% else %>
-    <% @space.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
+    <h3>
+      <%= pluralize @space.reviews.count, "review" %>
+    </h3>
+    <% if @space.reviews.count == 0 %>
+      <p>Be the first to leave a review for <%= @space.name %></p>
+    <% else %>
+      <p>Average rating:</p>
+      <div style="display:flex;">
+        <% @average_rating.times do %>
+          <i class="fas fa-star icon-stars"></i>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
-</div>
-<div>
-  <%= render 'reviews/form', space: @space, review: @review %>
+  </div>
+
+  <div class="review-buttons">
+    <div>
+      <button type="button" class="btn btn-secondary btn-sm write-rev-button">Write a review</button>
+    </div>
+
+    <!-- Only show the read button if there are reviews to read -->
+    <% unless  @space.reviews.blank? %>
+      <div>
+        <button type="button" class="btn btn-secondary btn-sm read-rev-button">Show / hide all reviews</button>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="display-review detail-box hide">
+    <h4>All reviews</h4>
+    <div id="reviews">
+      <% unless @space.reviews.blank? %>
+        <% @space.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+<div class="new-review detail-box hide">
+  <h4>Write your review</h4>
+  <div>
+    <%= render 'reviews/form', space: @space, review: @review %>
+  </div>
 </div>
 
 
