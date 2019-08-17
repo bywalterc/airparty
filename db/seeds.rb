@@ -38,19 +38,19 @@ simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v15
 simona.save
 
 ben = User.new(name: 'Ben',
-  email: 'ben@test.com',
+  email: 'ben@lewagon.com',
   password: 'secret')
 ben.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ixr9unj1pvqtkfbzvlcu.jpg"
 ben.save
 
 clementine = User.new(name: 'Clementine',
-  email: 'clementine@test.com',
+  email: 'clementine@yahoo.com',
   password: 'secret')
 clementine.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/pkoojatqokuphwpgmopa.jpg"
 clementine.save
 
 arthur = User.new(name: 'Arthur',
-  email: 'arthur@test.com',
+  email: 'arthur@gmail.com',
   password: 'secret')
 arthur.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/onkzo1zsbde5taheslax.jpg"
 arthur.save
@@ -206,6 +206,15 @@ def create_new_booking_jan(customer, space)
   return new_booking
 end
 
+def create_new_booking_may(customer, space)
+  new_booking = Booking.new
+  new_booking.user = customer
+  new_booking.space = space
+  new_booking.date_start = DateTime.strptime("5/18/2020", "%m/%d/%Y")
+  new_booking.date_end = DateTime.strptime("5/19/2020", "%m/%d/%Y")
+  return new_booking
+end
+
 # For each of the spaces seeded, create 2 bookings (1 in Sep, 1 in Oct), for a random customer who is not an owner
 all_spaces.each do |space|
   space_user = space.user
@@ -223,6 +232,11 @@ all_spaces.each do |space|
   customer = ""
   customer = pick_customer_not(space_user)
   new_booking = create_new_booking_jan(customer, space)
+  new_booking.save
+  # creates third booking in May
+  customer = ""
+  customer = pick_customer_not(space_user)
+  new_booking = create_new_booking_may(customer, space)
   new_booking.save
 end
 
