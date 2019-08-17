@@ -17,7 +17,7 @@
               class: "form-control",
               placeholder: "Find a space for your party"
               %>
-            <%= submit_tag "Search", class: "btn btn-dark search-button" %>
+            <%= submit_tag "Search", class: "btn btn-secondary search-button" %>
           </div>
         <% end %>
       </div>
@@ -44,19 +44,46 @@
 
   <% @spaces.each do |space| %>
 
+    <!-- Calculate Average rating of reviews -->
+    <% unless space.reviews.count == 0 %>
+      <% @sum_ratings = 0 %>
+      <% space.reviews.each do |review| %>
+          <% @sum_ratings = @sum_ratings + review.rating %>
+      <% end %>
+      <% @average_rating = @sum_ratings / space.reviews.count %>
+    <% end %>
+    <!--  -->
+
     <%= link_to space_path(space), {class: "space-summary-link"} do %>
       <div class="space-card-index">
+
         <div class="space-image-index">
           <%= cl_image_tag(space.photo,
         width: 400, height: 300, crop: :fill) %>
         </div>
+
         <div class="space-summary-index">
+          <div class="name-rating">
             <h3><%= space.name %></h3>
+
+            <% if space.reviews.count != 0 %>
+              <div style="display:flex;">
+                <% @average_rating.times do %>
+                <h3><i class="fas fa-star icon-stars-lg"></i></h3>
+                <% end %>
+              </div>
+              <% else %>
+                <p>No reviews</p>
+            <% end %>
+          </div>
+
           <p>Address: <%= space.address %></p>
+
           <div class="space-summary-price-guest">
             <p><i class="fas fa-user-friends"></i>  <%= space.capacity %></p>
             <p><i class="fas fa-pound-sign"></i>  <%= space.price %> per party</p>
           </div>
+
         </div>
       </div>
     <% end %>
