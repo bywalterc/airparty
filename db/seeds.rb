@@ -37,6 +37,26 @@ simona = User.new(name: 'Simona',
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
 
+ben = User.new(name: 'Ben',
+  email: 'ben@lewagon.com',
+  password: 'secret')
+ben.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ixr9unj1pvqtkfbzvlcu.jpg"
+ben.save
+
+clementine = User.new(name: 'Clementine',
+  email: 'clementine@yahoo.com',
+  password: 'secret')
+clementine.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/pkoojatqokuphwpgmopa.jpg"
+clementine.save
+
+arthur = User.new(name: 'Arthur',
+  email: 'arthur@gmail.com',
+  password: 'secret')
+arthur.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/onkzo1zsbde5taheslax.jpg"
+arthur.save
+
+
+
 
 puts "Finished!"
 
@@ -48,6 +68,7 @@ palace = Space.new(name: "Ana's Palace",
   address: "135 Kingsland Road, London",
   price: 100,
   category: "Party space",
+  description: "Want to feel like you are in a Disney movie ? This is the place for you.",
   capacity: 75,
   user: ana)
 
@@ -59,6 +80,7 @@ terrace = Space.new(name: "Ana's Apartment Terrace",
   address: "20 Shoreditch High Street, London",
   price: 50,
   category: "Party space",
+  description: "The BBQ with the best view of London",
   capacity: 30,
   user: ana)
 
@@ -70,6 +92,7 @@ roof = Space.new(name: "Simona's Roof Terrace",
   address: '30 St Mary Axe, London',
   price: 50,
   category: 'Party space',
+  description: "Already fitted with a DJ booth and a salt water jacuzzi - get your friends and let's party !",
   capacity: 65,
   user: simona)
 
@@ -81,6 +104,7 @@ sauna = Space.new(name: "Simona's Sauna and Pool",
   address: '5 Notting Hill Gate, London',
   price: 75,
   category: 'Party space',
+  description: "The Pool can be used to do lap, but better suited for cocktail wet parties",
   capacity: 15,
   user: simona)
 
@@ -92,6 +116,7 @@ vinyard = Space.new(name: "Walter's Vinyard",
   address: '12 Parkgate Road, London',
   price: 1750,
   category: 'Wedding space',
+  description: "If you are not into wine - don't book",
   capacity: 200,
   user: walter)
 
@@ -103,6 +128,7 @@ summer = Space.new(name: "Walter's Summer House",
   address: '100 Southwark Street, London',
   price: 80,
   category: 'BBQ area',
+  description: "Family friendly but also perfect for adult-only gatherings. Come and enjoy the view",
   capacity: 50,
   user: walter)
 
@@ -114,6 +140,7 @@ tennis = Space.new(name: "Spencer's Tennis Court",
   address: '302 Dalston Lane, London',
   price: 55,
   category: 'Recreation area',
+  description: "This is the place where Nadal and Federer played their first game. And promised to play their last",
   capacity: 8,
   user: spencer)
 
@@ -122,9 +149,10 @@ tennis.remote_photo_url = tennis_url
 tennis.save
 
 bunker = Space.new(name: "Spencer's Secret Bunker",
-  address: '74 Chalk Farm Road',
+  address: '74 Chalk Farm Road, London',
   price: 175,
   category: 'Dinner party venue',
+  description: "Great place. Only issue: we can not tell you where it is",
   capacity: 20,
   user: spencer)
 
@@ -178,6 +206,15 @@ def create_new_booking_jan(customer, space)
   return new_booking
 end
 
+def create_new_booking_may(customer, space)
+  new_booking = Booking.new
+  new_booking.user = customer
+  new_booking.space = space
+  new_booking.date_start = DateTime.strptime("5/18/2020", "%m/%d/%Y")
+  new_booking.date_end = DateTime.strptime("5/19/2020", "%m/%d/%Y")
+  return new_booking
+end
+
 # For each of the spaces seeded, create 2 bookings (1 in Sep, 1 in Oct), for a random customer who is not an owner
 all_spaces.each do |space|
   space_user = space.user
@@ -196,6 +233,11 @@ all_spaces.each do |space|
   customer = pick_customer_not(space_user)
   new_booking = create_new_booking_jan(customer, space)
   new_booking.save
+  # creates third booking in May
+  customer = ""
+  customer = pick_customer_not(space_user)
+  new_booking = create_new_booking_may(customer, space)
+  new_booking.save
 end
 
 
@@ -208,20 +250,26 @@ all_spaces = Space.all
 # Remove first Space from list to be seeded
 all_but_one_space = all_spaces.reject {|x| all_spaces.index(x) == 0 }
 
+def random_rating
+  result = Random.new
+  result = result.rand(3..5)
+  return result
+end
+
 all_but_one_space.each do |space|
 
   # First review
   new_review = Review.new
   new_review.space = space
   new_review.content = "This is a fantastic place to party 🎉"
-  new_review.rating = 3
+  new_review.rating = random_rating
   new_review.save
 
   # Second review
   review_two = Review.new
   review_two.space = space
   review_two.content = "Loved this place to celebrate Simona's birthday party ! 🍾🎂"
-  review_two.rating = 5
+  review_two.rating = random_rating
   review_two.save
 end
 
