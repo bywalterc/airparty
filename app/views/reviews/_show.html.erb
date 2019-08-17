@@ -1,5 +1,7 @@
 <div class= "review-card">
-  <%= cl_image_tag review.user.photo, class: "avatar" %>
+  <div class="review-avatar">
+    <%= cl_image_tag review.user.photo, class: "avatar" %>
+  </div>
   <div class="review-whole">
     <div class="review-content-stars">
       <p><%= review.content %></p>

@@ -263,6 +263,7 @@ all_but_one_space.each do |space|
   new_review.space = space
   new_review.content = "This is a fantastic place to party 🎉"
   new_review.rating = random_rating
+  new_review.user = ben
   new_review.save
 
   # Second review
@@ -270,6 +271,7 @@ all_but_one_space.each do |space|
   review_two.space = space
   review_two.content = "Loved this place to celebrate Simona's birthday party ! 🍾🎂"
   review_two.rating = random_rating
+  review_two.user = clementine
   review_two.save
 end
 
