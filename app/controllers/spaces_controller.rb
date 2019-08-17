@@ -23,7 +23,20 @@ class SpacesController < ApplicationController
   def show
     @booking = Booking.new
     @review = Review.new
+    @spaces = Space.geocoded
     @space = Space.find(params[:id])
+    @space_index = @spaces.index(@space)
+    @number_spaces = @spaces.length
+    if (@space_index - 1) >= 0
+      @prev_space_index = @space_index - 1
+      @prev_space = @spaces[@prev_space_index]
+    end
+    if (@space_index + 1) <= (@number_spaces - 1)
+      @next_space_index = @space_index + 1
+      @next_space = @spaces[@next_space_index]
+    end
+
+
     @markers = [{
         lat: @space.latitude,
         lng: @space.longitude,

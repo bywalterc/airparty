@@ -15,6 +15,30 @@
 <div class="container show-page">
 
   <div class="row">
+    <div class="col-12 col-lg-7 detail-area">
+
+
+      <div class="navigation">
+
+        <% if (@space_index + 1) <= (@number_spaces - 1) %>
+          <%= link_to space_path(@next_space) do %>
+            <h1><</h1>
+          <% end %>
+        <% else %>
+          <h1></h1>
+        <% end %>
+
+        <% if (@space_index - 1) >= 0 %>
+          <%= link_to space_path(@prev_space) do %>
+            <h1>></h1>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
 
     <div class="col-12 col-lg-7 detail-area">
 
