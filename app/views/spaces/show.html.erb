@@ -158,7 +158,7 @@
   </div>
 
 
-  <div class="display-review detail-box">
+  <div class="display-review detail-box hide">
     <h4>All reviews</h4>
     <div id="reviews">
       <% unless @space.reviews.blank? %>
@@ -169,7 +169,7 @@
     </div>
   </div>
 
-<div class="new-review detail-box">
+<div class="new-review detail-box hide">
   <h4>Write your review</h4>
   <div>
     <%= render 'reviews/form', space: @space, review: @review %>
