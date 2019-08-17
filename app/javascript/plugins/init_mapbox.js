@@ -1,7 +1,5 @@
 import mapboxgl from "mapbox-gl";
 
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
-// [...]
 
 const mapElement = document.getElementById("map");
 
@@ -9,7 +7,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/walterc/cjzd48tlq061r1cmjuh5nhf3l"
+    style: 'mapbox://styles/mapbox/streets-v10'
   });
 };
 
@@ -34,7 +32,6 @@ const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
     markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
     map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
   }
 };
 
