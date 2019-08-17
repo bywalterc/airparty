@@ -48,6 +48,7 @@ palace = Space.new(name: "Ana's Palace",
   address: "135 Kingsland Road, London",
   price: 100,
   category: "Party space",
+  description: "Want to feel like you are in a Disney movie ? This is the place for you.",
   capacity: 75,
   user: ana)
 
@@ -59,6 +60,7 @@ terrace = Space.new(name: "Ana's Apartment Terrace",
   address: "20 Shoreditch High Street, London",
   price: 50,
   category: "Party space",
+  description: "The BBQ with the best view of London",
   capacity: 30,
   user: ana)
 
@@ -70,6 +72,7 @@ roof = Space.new(name: "Simona's Roof Terrace",
   address: '30 St Mary Axe, London',
   price: 50,
   category: 'Party space',
+  description: "Already fitted with a DJ booth and a salt water jacuzzi - get your friends and let's party !",
   capacity: 65,
   user: simona)
 
@@ -81,6 +84,7 @@ sauna = Space.new(name: "Simona's Sauna and Pool",
   address: '5 Notting Hill Gate, London',
   price: 75,
   category: 'Party space',
+  description: "The Pool can be used to do lap, but better suited for cocktail wet parties",
   capacity: 15,
   user: simona)
 
@@ -92,6 +96,7 @@ vinyard = Space.new(name: "Walter's Vinyard",
   address: '12 Parkgate Road, London',
   price: 1750,
   category: 'Wedding space',
+  description: "If you are not into wine - don't book",
   capacity: 200,
   user: walter)
 
@@ -103,6 +108,7 @@ summer = Space.new(name: "Walter's Summer House",
   address: '100 Southwark Street, London',
   price: 80,
   category: 'BBQ area',
+  description: "Family friendly but also perfect for adult-only gatherings. Come and enjoy the view",
   capacity: 50,
   user: walter)
 
@@ -114,6 +120,7 @@ tennis = Space.new(name: "Spencer's Tennis Court",
   address: '302 Dalston Lane, London',
   price: 55,
   category: 'Recreation area',
+  description: "This is the place where Nadal and Federer played their first game. And promised to play their last",
   capacity: 8,
   user: spencer)
 
@@ -125,6 +132,7 @@ bunker = Space.new(name: "Spencer's Secret Bunker",
   address: '74 Chalk Farm Road',
   price: 175,
   category: 'Dinner party venue',
+  description: "Great place. Only issue: we can not tell you where it is",
   capacity: 20,
   user: spencer)
 
