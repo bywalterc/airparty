@@ -45,5 +45,47 @@
   }
 }
 
+.review-card{
+  overflow: hidden;
+  height: 80px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  border-radius: 8px;
+  img {
+    margin: 4px;
+  }
+}
+
+.reviews {
+  display:flex;
+}
+
+
+.review-content-stars{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  margin-bottom: 8px;
+  p{
+    margin:0;
+
+  }
+
+}
+
+.review-whole{
+  width: 100%;
+  padding: 16px;
+  small{
+    color: gray;
+
+  }
+}
+
 
 

@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @space = Space.find(params[:space_id])
     @review = Review.new(review_params)
     @review.space = @space
+    @review.user = current_user
     if @review.save
       respond_to do |format|
         format.html { redirect_to space_path(@space) }
