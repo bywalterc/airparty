@@ -89,6 +89,12 @@ h1 { font-size: 1.5em; margin: 10px; }
 .where-you-click-stars{
     display: flex;
     align-items: center;
+    p {
+      margin-top: 11px;
+      margin-bottom: 11px;
+      margin-right: 16px;
+      font-size: 16px;
+    }
 }
 .where-you-click-stars h3 {
     margin-top: 11px;
