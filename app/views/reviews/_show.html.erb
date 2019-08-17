@@ -1,10 +1,17 @@
-<div class="review" style="display:flex; align-items: center; justify-content: space-between;">
-  <p><%= review.content %></p>
-  <div style="display:flex;">
-    <% review.rating.times do %>
-      <i class="fas fa-star icon-stars"></i>
-    <% end %>
+<div class= "review-card">
+  <%= cl_image_tag review.user.photo, class: "avatar" %>
+  <div class="review-whole">
+    <div class="review-content-stars">
+      <p><%= review.content %></p>
+      <div style="display:flex;">
+          <% review.rating.times do %>
+          <i class="fas fa-star icon-stars"></i>
+          <% end %>
+      </div>
+    </div>
+    <small><%= review.user.name %></small>
   </div>
 </div>
+
 
 
