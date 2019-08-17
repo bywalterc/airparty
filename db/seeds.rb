@@ -149,7 +149,7 @@ tennis.remote_photo_url = tennis_url
 tennis.save
 
 bunker = Space.new(name: "Spencer's Secret Bunker",
-  address: '74 Chalk Farm Road',
+  address: '74 Chalk Farm Road, London',
   price: 175,
   category: 'Dinner party venue',
   description: "Great place. Only issue: we can not tell you where it is",
