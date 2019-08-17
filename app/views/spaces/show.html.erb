@@ -50,7 +50,6 @@
           <% end %>
 
 
-
         </div>
 
       </div>
@@ -73,7 +72,7 @@
 
     <div class="col-12 col-lg-5 booking-area">
 
-      <div class="photo-box">
+      <div class="map-box">
         <div
           id="map"
           style="width: 100%;
@@ -127,49 +126,55 @@
   </div>
 
 
-  <h2>Reviews for <%= @space.name %></h2>
+  <div class="review-heading">
+    <h2 class="review-title">Reviews for <%= @space.name %></h2>
 
-
-  <h3>
-    <%= pluralize @space.reviews.count, "review" %>
-  </h3>
-  <% unless @space.reviews.count == 0 %>
-  <p>Average rating:</p>
-    <div style="display:flex;">
-      <% @average_rating.times do %>
-        <i class="fas fa-star icon-stars"></i>
-      <% end %>
-    </div>
-  <% end %>
-
-  <% if @space.reviews.blank? %>
-    Be the first to leave a review for <%= @space.name %>
-  <% end %>
-
-  <div>
-    <button type="button" class="btn btn-secondary btn-sm write-rev-button">Write a review</button>
-  </div>
-
-  <!-- Only show the read button if there are reviews to read -->
-  <% unless  @space.reviews.blank? %>
-    <div>
-      <button type="button" class="btn btn-secondary btn-sm read-rev-button">Read all reviews</button>
-    </div>
-  <% end %>
-
-
-
-  <div id="reviews">
-    <% unless @space.reviews.blank? %>
-      <% @space.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
-      <% end %>
+    <h3>
+      <%= pluralize @space.reviews.count, "review" %>
+    </h3>
+    <% if @space.reviews.count == 0 %>
+      <p>Be the first to leave a review for <%= @space.name %></p>
+    <% else %>
+      <p>Average rating:</p>
+      <div style="display:flex;">
+        <% @average_rating.times do %>
+          <i class="fas fa-star icon-stars"></i>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
+  <div class="review-buttons">
+    <div>
+      <button type="button" class="btn btn-secondary btn-sm write-rev-button">Write a review</button>
+    </div>
+
+    <!-- Only show the read button if there are reviews to read -->
+    <% unless  @space.reviews.blank? %>
+      <div>
+        <button type="button" class="btn btn-secondary btn-sm read-rev-button">Read all reviews</button>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="display-review detail-box">
+    <h4>All reviews</h4>
+    <div id="reviews">
+      <% unless @space.reviews.blank? %>
+        <% @space.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+<div class="new-review detail-box">
+  <h4>Write your review</h4>
   <div>
     <%= render 'reviews/form', space: @space, review: @review %>
   </div>
+</div>
 
 
 </div>

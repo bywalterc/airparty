@@ -23,6 +23,11 @@
     color: rgba(0,0,0,0.5);
     font-size: 1.25rem;
   }
+
+   h4 {
+    color: rgba(0,0,0,0.5);
+    font-size: 1.1rem;
+  }
 }
 
 .detail-box {
@@ -34,7 +39,7 @@
   padding: 24px;
 }
 
-.photo-box {
+.map-box {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
@@ -99,4 +104,24 @@
 .booking-list-item {
   display: flex;
   justify-content: space-between;
+}
+
+.review-heading {
+  margin-bottom: 32px;
+}
+
+.review-title {
+  margin-bottom:24px;
+}
+
+.review-buttons {
+  display:flex;
+}
+
+.write-rev-button {
+  margin-right: 32px;
+}
+
+.display-review {
+  margin-top: 24px;
 }
