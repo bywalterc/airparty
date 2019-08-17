@@ -2,6 +2,7 @@ puts 'Cleaning databases...'
 Booking.destroy_all
 Space.destroy_all
 User.destroy_all
+Review.destroy_all
 
 puts 'Creating Users...'
 
@@ -195,6 +196,24 @@ all_spaces.each do |space|
   customer = pick_customer_not(space_user)
   new_booking = create_new_booking_jan(customer, space)
   new_booking.save
+end
+
+
+puts "Finished!"
+
+puts 'Creating Reviews...'
+
+all_spaces = Space.all
+
+# Remove first Space from list to be seeded
+all_spaces.delete_at(0)
+
+all_spaces.each do |space|
+  new_review = Review.new
+  new_review.space = space
+  new_review.content = "This is a fantastic place to party 🎉"
+  new_review.rating = 4
+  new_review.save
 end
 
 
