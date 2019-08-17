@@ -145,9 +145,12 @@
   </div>
 
   <div class="review-buttons">
+    <!-- Only show the write button if the user is not the owner -->
     <div>
       <button type="button" class="btn btn-secondary btn-sm write-rev-button">Write a review</button>
     </div>
+
+
 
     <!-- Only show the read button if there are reviews to read -->
     <% unless  @space.reviews.blank? %>

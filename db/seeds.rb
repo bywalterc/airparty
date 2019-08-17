@@ -37,6 +37,26 @@ simona = User.new(name: 'Simona',
 simona.remote_photo_url = "https://res.cloudinary.com/bywalterc/image/upload/v1565441484/t67gth7jc1setf7wgqzk.jpg"
 simona.save
 
+ben = User.new(name: 'Ben',
+  email: 'ben@test.com',
+  password: 'secret')
+ben.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ixr9unj1pvqtkfbzvlcu.jpg"
+ben.save
+
+clementine = User.new(name: 'Clementine',
+  email: 'clementine@test.com',
+  password: 'secret')
+clementine.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/pkoojatqokuphwpgmopa.jpg"
+clementine.save
+
+arthur = User.new(name: 'Arthur',
+  email: 'arthur@test.com',
+  password: 'secret')
+arthur.remote_photo_url = "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/onkzo1zsbde5taheslax.jpg"
+arthur.save
+
+
+
 
 puts "Finished!"
 
